@@ -78,7 +78,7 @@ python scripts/alphapose_image_server.py --debug True
 ```
 Folder containing results will appear in your home folder.
 
-2. Second, similarly as the script before, you can launch the [motionbert_image_server.py](motionbert_changed/motionbert_image_server.py) script for pocessing the image data from the AlphaPose results in a new terminal window. To run it, move to MotionBERT main downloaded repository and use the following command:
+2. Secondly, similarly as the script before, you can launch the [motionbert_image_server.py](motionbert_changed/motionbert_image_server.py) script for processing the image data from the AlphaPose results in a new terminal window. To run it, move to MotionBERT main downloaded repository and use the following command:
 ```shell
 python motionbert_image_server.py
 ```
