@@ -17,20 +17,39 @@ This is a repository to bachelor thesis on working with humanoid robot TIAGo++ u
 - [full_visualization_results](full_visualization_results): Folder vith results of image processing from simulation and a real world
 
 
-## Installation and requirements
+## Requirements
 
 The requirements to run this project are
 
 - Both Python 2.7 and Python 3.6.9
 
-- Installed AlphaPose conda enviroment (installable from [environment_alphapose.yml](environment_alphapose.yml)) alongside with downloaded repo, Fast Pose model trained on Halpe (26 keypoints) dataset.
-
-- Installed MotionBERT conda enviroment (installable from [environment_motionbert.yml](environment_motionbert.yml)) alongside with downloaded repo and everything else required for 3D Pose estimation from this repo
+- [Anaconda](https://www.anaconda.com/) platform for creating virtual environments
 
 - Ubuntu 18.04 with ROS Melodic and TIAGo++ workspace installed by [this](http://wiki.ros.org/Robots/TIAGo%2B%2B/Tutorials/Installation/InstallUbuntuAndROS) guide
 
-- few additional packages for comunication between running scripts: zmq, cloudpickle, mediapipe (version 0.8.2 for Python 3.6.9)
+- Downloaded [AlphaPose](https://github.com/MVIG-SJTU/AlphaPose) repository and its Fast Pose model trained on Halpe (26 keypoints) dataset.
 
+- Downloaded [MotionBERT](https://github.com/Walter0807/MotionBERT) repository and everything else required for 3D Pose estimation described in this repo
+
+- few additional packages for comunication between running scripts: [zmq](https://pypi.org/project/zmq/), [cloudpickle](https://pypi.org/project/cloudpickle/) and [mediapipe](https://pypi.org/project/mediapipe/0.8.2/) (version 0.8.2 for Python 3.6.9, not the latest version)
+
+## Installation guide
+
+- Firstly, setup your environments for using AlphaPose with [environment_alphapose.yml](environment_alphapose.yml) and MotionBERT with [environment_motionbert.yml](environment_motionbert.yml). For AlphaPose environment, use this command:
+
+```shell
+conda env create -f environment_alphapose.yml
+```
+For MotionBERT environment, use:
+
+```shell
+conda env create -f environment_motionbert.yml
+```
+To make sure environments are created, you can run the following command, which shows all installed conda environments:
+
+```shell
+conda env list
+```
 
 After the steps above are complete, do following:
 
