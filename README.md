@@ -25,7 +25,7 @@ The requirements to run this project are
 
 - [Anaconda](https://www.anaconda.com/) platform for creating virtual environments
 
-- Ubuntu 18.04 with ROS Melodic and TIAGo++ workspace installed by [this](http://wiki.ros.org/Robots/TIAGo%2B%2B/Tutorials/Installation/InstallUbuntuAndROS) guide
+- Ubuntu 18.04 with ROS Melodic and TIAGo++ workspace (for example named "tiago_ws") installed by [this](http://wiki.ros.org/Robots/TIAGo%2B%2B/Tutorials/Installation/InstallUbuntuAndROS) guide
 
 - Downloaded [AlphaPose](https://github.com/MVIG-SJTU/AlphaPose) repository and its Fast Pose model trained on Halpe (26 keypoints) dataset.
 
@@ -53,9 +53,9 @@ conda env list
 
 After the steps above are complete, do following:
 
-- from [alphapose_changed](alphapose_changed) folder copy everything there to original AlphaPose repo
+- from [alphapose_changed](alphapose_changed) folder, copy everything to original AlphaPose repository
 
-- from [motionbert_changed](motionbert_changed) folder copy everything there to original MotionBERT repo
+- from [motionbert_changed](motionbert_changed) folder, copy everything to original MotionBERT repository
 
 Now you should be ready to launch the project!
 
@@ -63,7 +63,7 @@ Now you should be ready to launch the project!
 
 Fot the entire project to work, you need 4 simultaneously running terminal windows, which I will describe below:
 
-1. First window you can launch is a window to run [alphapose_image_server.py](alphapose_changed/scripts/alphapose_image_server.py) script to start up the image recognition with AlphaPose. To run it, simply move to AlphaPose main repo folder and use the following command:
+1. First window you can launch is a window to run [alphapose_image_server.py](alphapose_changed/scripts/alphapose_image_server.py) script to start up the image recognition with AlphaPose. To run it, simply move to AlphaPose main repository folder and use the following command:
 ```shell
 python scripts/alphapose_image_server.py
 ```
@@ -73,5 +73,39 @@ python scripts/alphapose_image_server.py --debug True
 ```
 Folder containing results will appear in your home folder.
 
-
+2. Second, similarly as the script before, you can launch the [motionbert_image_server.py](motionbert_changed/motionbert_image_server.py) script for pocessing the image data from the AlphaPose results. To run it, move to MotionBERT main downloaded repository and use the following command:
+```shell
+python motionbert_image_server.py
+```
+If you want to save the visualization results of image recognition, use optional argument `--debug` like so:
+```shell
+python motionbert_image_server.py --debug True
+```
+3. Now, if you want to try this project in simulation, open a new terminal window, move to created "tiago_ws" workspace, and use the commands below:
+```shell
+source ./devel/setup.bash
+roslaunch tiago_dual_gazebo tiago_dual_gazebo.launch public_sim:=true world:=empty
+```
+Otherwise, while testing this on a real robot, you need to specify few things in each new terminal launched after this step like so:
+- Firstly, make sure your PC is connected
+- You need to specify the `ROS_MASTER_URI` variable depending on your robot's IP address like so:
+```shell
+export ROS_MASTER_URI=http://<your_robot_ip>:11311
+```
+In my case, i used this exact command:
+```shell
+export ROS_MASTER_URI=http://192.168.130.114:11311
+```
+- Next, you need to specify the IP address of your PC, where all the other programs are running. You do this via the command below
+```shell
+export ROS_IP=<your_pc_ip>
+```
+- You also should have specified the name of your robot in `/etc/hosts` file, where you add the following line:
+```shell
+<your_robot_ip> <your_robot_name>
+```
+In my case, i added:
+```shell
+192.168.130.114 tiago-114c
+```
 
