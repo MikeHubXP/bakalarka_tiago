@@ -196,3 +196,7 @@ This demo is for checking the correct functionality of calculating the final pla
 rosrun python_control_testing_functions main.py --demo go_to_point
 ```
 
+## Results 
+The functionality of this implementation is demonstrated in [this](https://youtu.be/sJkSQmx5dcA) video, where the procces of finding human, keeping it in the center of robot vision and then moving to pointed-to place is shown in practice.
+
+
