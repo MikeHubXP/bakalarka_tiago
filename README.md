@@ -66,7 +66,7 @@ Now you should be ready to launch the project!
 
 ## Starting up the programs
 
-Fot the entire project to work, you need 4 simultaneously running terminal windows, which I will describe below:
+Fot the entire project to work, you need 4 (5 with simulation) simultaneously running terminal windows, which I will describe below:
 
 1. First window you can launch is a new terminal window to run [alphapose_image_server.py](alphapose_changed/scripts/alphapose_image_server.py) script to start up the image recognition with AlphaPose. To run it, simply move to AlphaPose main repository folder and use the following command:
 ```shell
