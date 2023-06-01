@@ -57,8 +57,11 @@ After the steps above are complete, do following:
 
 - from [motionbert_changed](motionbert_changed) folder, copy everything to original MotionBERT repository
 
-- add the package [tiago_dual_python_controller](tiago_dual_python_controller) to the src folder on created "tiago_ws" workspace and rebuild it to register this new package with ROS.
+- add the package [tiago_dual_python_controller](tiago_dual_python_controller) to the `/src` folder in created "tiago_ws" workspace and rebuild it to register this new package with ROS via command:
 
+```shell
+catkin build
+```
 Now you should be ready to launch the project!
 
 ## Starting up the programs
