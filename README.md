@@ -100,7 +100,7 @@ In my case, i used this exact command:
 ```shell
 export ROS_MASTER_URI=http://192.168.130.114:11311
 ```
-- Next, you need to specify the IP address of your PC, where all the other programs are running. You do this via the command below
+- Next, you need to specify the IP address of your PC , where all the other programs are running, in `ROS_IP` varible. You do this via the command below:
 ```shell
 export ROS_IP=<your_pc_ip>
 ```
@@ -141,4 +141,44 @@ Before launching the entire final loop, you can try running a few demo programs 
 rosrun python_control_testing_functions main.py --demo <demo_name>
 ```
 ### Demo `camera`:
+This demo is for verification of the robot's camera functions and processing of the image taken by MediaPipe, AlphaPose and MotionBERT. You can launch it via the command below:
+```shell
+rosrun python_control_testing_functions main.py --demo camera
+```
+
+### Demo `robot_info`:
+This demo is for printing of the robot's odometry data to terminal, including its speed and position in odom coordinate system. You can launch it via the command below:
+```shell
+rosrun python_control_testing_functions main.py --demo robot_info
+```
+
+### Demo `move_head`:
+This demo is for checking the correct functionality of the robot's head movement. The head rotates to 30 degrees right, left, up and down. You can launch it via the command below:
+```shell
+rosrun python_control_testing_functions main.py --demo move_head
+```
+
+### Demo `rotate_base`:
+This demo is for checking the correct functionality of the robot's base angular movement. Base rotates to 45 degrees left and right from the current direction. You can launch it via the command below:
+```shell
+rosrun python_control_testing_functions main.py --demo rotate_base
+```
+
+### Demo `move_forward_and_back`:
+This demo is for checking the correct functionality of the robot's base linear movement. Base moves 1 meter forward and then returns to the initial position. You can launch it via the command below:
+```shell
+rosrun python_control_testing_functions main.py --demo move_forward_and_back
+```
+
+### Demo `watch_human`:
+This demo is for checking the correct functionality of keeping the human in the robot's field of view. Robot only moves its head and rotates base to keep visual contact with the human. You can launch it via the command below:
+```shell
+rosrun python_control_testing_functions main.py --demo watch_human
+```
+
+### Demo `go_to_point`:
+This demo is for checking the correct functionality of calculating the final place of movement from the human gesture. Robot only takes a picture without finding a human, then processes it and after the confirmation moves to computed point. You can launch it via the command below:
+```shell
+rosrun python_control_testing_functions main.py --demo go_to_point
+```
 
