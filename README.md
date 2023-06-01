@@ -91,9 +91,10 @@ python motionbert_image_server.py --debug True
 source ./devel/setup.bash
 roslaunch tiago_dual_gazebo tiago_dual_gazebo.launch public_sim:=true world:=empty
 ```
-If you want to try this project in simulation, skip the additional requirements in this step and move to step 4 
+This launches [Gazeboo](https://gazebosim.org/) simulator with the robot in an empty world and moves the robot to home position.
+If you want to try this project only in simulation, skip the additional requirements in this step and move to step 4 
 
-Otherwise, while testing this on a real robot, you need to specify few things in each new terminal launched after this step like so:
+Otherwise, while testing this on a real robot, you need to specify few things in **each** new terminal launched after this step like so:
 - Firstly, make sure your PC is connected to the same network as the robot is.
 - You need to specify the `ROS_MASTER_URI` variable depending on your robot's IP address like so:
 ```shell
