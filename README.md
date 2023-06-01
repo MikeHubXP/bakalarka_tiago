@@ -116,6 +116,16 @@ In my case, i added:
 ```shell
 192.168.130.114 tiago-114c
 ```
+To make sure the communication is established correctly, you can thy to get the list of all ROS topics provided by the robot by entering the following command to terminal:
+```shell
+rostopic list
+```
+If the list of topics appears, you should also check wether you are able to read the contents of messages transfered on those topics. You can check this for example by listening to the `/tf` topic with transforms between coordinate frames of the robot by entering the command below:
+```shell
+rostopic echo /tf
+```
+If a stream of messages containg transformation data appears in your terminal, the communication with robot was establishd succesfully.
+
 4. Now you can launch the first ROS node, named [mediapipe_image_server.py](tiago_dual_python_controller/scripts/mediapipe_image_server.py), for processing the images with MediaPipe (using installed mediapipe package).
 To run it, open a new terminal window, move to "tiago_ws" and enter the following commands:
 ```shell
