@@ -31,7 +31,7 @@ The requirements to run this project are
 
 - Downloaded [MotionBERT](https://github.com/Walter0807/MotionBERT) repository and everything else required for 3D Pose estimation described in this repo
 
-- few additional packages for comunication between running scripts: [zmq](https://pypi.org/project/zmq/), [cloudpickle](https://pypi.org/project/cloudpickle/) and [mediapipe](https://pypi.org/project/mediapipe/0.8.2/) (version 0.8.2 for Python 3.6.9, not the latest version)
+- few additional packages for comunication between running scripts: [zmq](https://pypi.org/project/zmq/), [cloudpickle](https://pypi.org/project/cloudpickle/) and [mediapipe](https://pypi.org/project/mediapipe/0.8.2/) (version 0.8.2 for Python 3.6.9, not the latest version), installed for both Python 2 and 3 (mediapipe only for Python 3)
 
 ## Installation guide
 
@@ -53,6 +53,25 @@ conda env list
 
 After the steps above are complete, do following:
 
-- from [alphapose_changed](alphapose_changed) folder copy everything there to original AlphaPose repo and put there [image_share_service](image_share_service) as well 
+- from [alphapose_changed](alphapose_changed) folder copy everything there to original AlphaPose repo
 
-- from [motionbert_changed](motionbert_changed) folder copy everything there to original MotionBERT repo and put there [image_share_service](image_share_service) as well 
+- from [motionbert_changed](motionbert_changed) folder copy everything there to original MotionBERT repo
+
+Now you should be ready to launch the project!
+
+## Starting up the programs
+
+Fot the entire project to work, you need 4 simultaneously running terminal windows, which I will describe below:
+
+1. First window you can launch is a window to run [alphapose_image_server.py](alphapose_changed/scripts/alphapose_image_server.py) script to start up the image recognition with AlphaPose. To run it, simply move to AlphaPose main repo folder and use the following command:
+```shell
+python scripts/alphapose_image_server.py
+```
+If you want to save the visualization results of image recognition, use optional argument `--debug` like so:
+```shell
+python scripts/alphapose_image_server.py --debug True
+```
+Folder containing results will appear in your home folder.
+
+
+
