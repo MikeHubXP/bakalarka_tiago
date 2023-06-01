@@ -116,7 +116,7 @@ In my case, i added:
 ```shell
 192.168.130.114 tiago-114c
 ```
-To make sure the communication is established correctly, you can thy to get the list of all ROS topics provided by the robot by entering the following command to terminal:
+To make sure the communication is established correctly, you can try to get the list of all ROS topics provided by the robot by entering the following command to terminal:
 ```shell
 rostopic list
 ```
